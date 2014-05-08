@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+
+group = 'ca.appspace'
+description = 'NoDTO project allows to overcome Serialization problems. It does not require DTO beans creation. This can easily solve issues like GWT and Hibernate'
+version = '1.0'
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories { 
+	mavenCentral()
+	mavenLocal()
+}
+
+jar.doFirst{
+	sourceSets.main.java.srcDirs.each {
+	   from it
+	}
+}
